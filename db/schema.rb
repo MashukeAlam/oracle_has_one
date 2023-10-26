@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_10_26_040154) do
+ActiveRecord::Schema.define(version: 2023_10_26_084110) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
@@ -18,28 +18,13 @@ ActiveRecord::Schema.define(version: 2023_10_26_040154) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "companybills", force: :cascade do |t|
-    t.string "companybillname"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "companyinvoices", force: :cascade do |t|
-    t.string "invoicename"
-    t.integer "companybill_id", precision: 38
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["companybill_id"], name: "i_com_com_id"
-  end
-
   create_table "sidemodules", force: :cascade do |t|
     t.string "name"
-    t.integer "company_id", precision: 38
+    t.bigint "company_id", limit: 19, precision: 19
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["company_id"], name: "i_sidemodules_company_id"
   end
 
-  add_foreign_key "companyinvoices", "companybills"
   add_foreign_key "sidemodules", "companies"
 end
