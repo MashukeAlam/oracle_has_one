@@ -13,6 +13,7 @@ class SidemodulesController < ApplicationController
   # GET /sidemodules/new
   def new
     @sidemodule = Sidemodule.new
+    @company_id = params[:company_id]
   end
 
   # GET /sidemodules/1/edit
@@ -23,7 +24,7 @@ class SidemodulesController < ApplicationController
   def create
 
     @sidemodule = Sidemodule.new(sidemodule_params)
-    @company_id = params[:company_id]
+    # @company_id = 99
 
     respond_to do |format|
       if @sidemodule.save

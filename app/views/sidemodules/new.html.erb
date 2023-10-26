@@ -1,5 +1,32 @@
 <h1>New Sidemodule</h1>
 
-<%= render 'form', sidemodule: @sidemodule %>
+<%= form_with(model: @sidemodule, local: true) do |form| %>
+  <% if @sidemodule.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sidemodule.errors.count, "error") %> prohibited this sidemodule from being saved:</h2>
+
+      <ul>
+        <% @sidemodule.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :company_id %>
+    <%= form.text_field :company_id, :value => @company_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
 
 <%= link_to 'Back', sidemodules_path %>
