@@ -28,7 +28,7 @@ class SidemodulesController < ApplicationController
 
     respond_to do |format|
       if @sidemodule.save
-        format.html { redirect_to sidemodule_url(@sidemodule), notice: "Sidemodule was successfully created." }
+        format.html { redirect_to companies_url, notice: "Sidemodule was successfully created." }
         format.json { render :show, status: :created, location: @sidemodule }
       else
         format.html { render :new, status: :unprocessable_entity }
