@@ -21,7 +21,9 @@ class SidemodulesController < ApplicationController
 
   # POST /sidemodules or /sidemodules.json
   def create
+
     @sidemodule = Sidemodule.new(sidemodule_params)
+    @company_id = params[:company_id]
 
     respond_to do |format|
       if @sidemodule.save
