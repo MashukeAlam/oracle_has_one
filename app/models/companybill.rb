@@ -1,0 +1,2 @@
+class Companybill < ApplicationRecord
+end

@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Companybills</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Companybillname</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @companybills.each do |companybill| %>
+      <tr>
+        <td><%= companybill.companybillname %></td>
+        <td><%= link_to 'Show', companybill %></td>
+        <td><%= link_to 'Edit', edit_companybill_path(companybill) %></td>
+        <td><%= link_to 'Destroy', companybill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Companybill', new_companybill_path %>

@@ -1,0 +1,22 @@
+<%= form_with(model: companybill, local: true) do |form| %>
+  <% if companybill.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(companybill.errors.count, "error") %> prohibited this companybill from being saved:</h2>
+
+      <ul>
+      <% companybill.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :companybillname %>
+    <%= form.text_field :companybillname %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
