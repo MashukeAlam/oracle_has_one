@@ -2,7 +2,7 @@ default: &default
   adapter: oracle_enhanced
   encoding: utf8
   database: "FREEPDB1"
-  username: "root2"
+  username: "root3"
   password: "root"
   host: "localhost"
   port: 1521
