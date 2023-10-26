@@ -21,7 +21,7 @@
         <td><%= link_to 'Edit', edit_company_path(company) %></td>
         <td><%= link_to 'Delete', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% if company.sidemodule.present? %>
-          <td class="sidebar"><%= company.sidemodule.name %></td>
+          <td class="sidebar"><%= link_to company.sidemodule.name, company.sidemodule %></td>
         <% else %>
           <td><%= link_to 'Add modules', new_sidemodule_path(company_id: company.id) %></td>
         <% end %>
